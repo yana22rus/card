@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body onload="save_selected_value({{data_in_db_type_creature}},{{data_in_db_keyword_card}},{{data_in_db_mechanics_card}})">
+
+
+<form method="POST" id="form_create_card" enctype=multipart/form-data>
+
+
+    <label> Изображение
+        <input type="file" name="file" id="img_input" accept="image/jpeg,image/png,image/bmp">
+    </label>
+
+    <input placeholder="Название карты" name="title_card" value="{{default_title_card}}">
+
+    <input placeholder="Описание карты" name="description_card" value="{{default_description_card}}">
+
+
+    <select name="class_card" class="class_card">
+        <option hidden>{{default_class_card}}</option>
+
+        {% for x in class_card %}
+
+        <option>{{x}}</option>
+
+
+        {% endfor %}
+    </select>
+
+    <select name="type_card" id="type_card" onChange="update()">
+        <option hidden>{{default_type_card}}</option>
+
+        {% for x in type_card %}
+
+        <option>{{x}}</option>
+
+        {% endfor %}
+    </select>
+
+
+    <select name="type_creature" id="type_creature" multiple>
+        {% for x in type_creature %}
+        {{type_creature.counter}}
+        <option>{{x}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="rare_card">
+        <option hidden>{{default_rare_card}}</option>
+        {% for x in rare_card %}
+        <option>{{x}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="mana_card">
+        <option hidden>{{default_mana_card}}</option>
+        {% for x in mana_card %}
+        <option>{{x}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="attack_card" id="attack_card">
+        <option hidden>{{default_attack_card}}</option>
+        {% for x in attack_card %}
+        <option>{{x}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="life_card" id="life_card">
+        <option hidden>{{default_life_card}}</option>
+        {% for x in life_card %}
+        {{life_card.counter}}
+        <option>{{x}}</option>
+        {% endfor %}
+    </select>
+
+
+    <select name="keyword_card" multiple id="keyword_card">
+        {% for x in keyword_card %}
+        <option hidden>Ключевое слово</option>
+        {{keyword_card.counter}}
+        <option>{{x}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="mechanics_card" id="mechanics_card" multiple>
+        {% for x in mechanics_card %}
+        <option hidden>Игровые механики</option>
+        {{mechanics_card.counter}}
+        <option>{{x}}</option>
+        {% endfor %}
+    </select>
+
+
+    <input type="submit" value="Создать">
+</form>
+<div id="display_image"></div>
+<script src="{{ url_for('static', filename='js/create_cards/script.js') }}"></script>
+
+<link href="{{ url_for('static', filename='css/create_cards/style.css') }}" rel="stylesheet">
+
+
+</body>
+</html>
