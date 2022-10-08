@@ -77,6 +77,18 @@ let uploaded_image = "";
 
 
 image_input.addEventListener("change", function () {
+
+    if (document.location.pathname.indexOf("update_cards") === 1) {
+
+        let img = document.querySelector('img');
+        if (typeof (img) != 'undefined' && img != null) {
+            img.remove();
+        }
+
+
+    }
+
+
     let reader = new FileReader()
     reader.addEventListener("load", () => {
         uploaded_image = reader.result

@@ -1,6 +1,6 @@
 import sqlite3
 from getpass import getuser
-from os import remove
+from os import remove, getcwd, listdir
 
 path = f"/home/{getuser()}/cards.sqlite"
 
@@ -32,3 +32,13 @@ with sqlite3.connect(path) as con:
     img STRING,
     time_create STRING    
     )""")
+
+path = getcwd() + "/project/static/img/cards"
+
+file = listdir(path)
+
+for x in file:
+
+    if x.split(".")[-1] in ("png", "jpeg", "jpg", "bmp"):
+
+        remove(f"{path}/{x}")

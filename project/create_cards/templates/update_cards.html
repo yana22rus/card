@@ -23,9 +23,11 @@
     <select name="class_card" class="class_card">
         <option hidden>{{default_class_card}}</option>
 
-        {% for x in class_card %}
+        <optgroup label="Одноцветные" id="single_color"></optgroup>
 
-        <option>{{x}}</option>
+        {% for x in lst_class_cards %}
+
+        <option id="{{x}}">{{x}}</option>
 
 
         {% endfor %}
@@ -98,7 +100,7 @@
 
     <input type="submit" value="Создать">
 </form>
-<div id="display_image"></div>
+<div id="display_image"><img src="/static/img/cards/{{img}}" alt=""></div>
 <script src="{{ url_for('static', filename='js/create_cards/script.js') }}"></script>
 
 <link href="{{ url_for('static', filename='css/create_cards/style.css') }}" rel="stylesheet">
