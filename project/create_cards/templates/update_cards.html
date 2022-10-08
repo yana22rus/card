@@ -5,7 +5,7 @@
     <title>Title</title>
 
 </head>
-<body>
+<body onload="save_selected_value({{data_in_db_type_creature}},{{data_in_db_keyword_card}},{{data_in_db_mechanics_card}})">
 
 
 <form method="POST" id="form_create_card" enctype=multipart/form-data>
@@ -20,15 +20,12 @@
     <input placeholder="Описание карты" name="description_card" value="{{default_description_card}}">
 
 
-    <select name="class_card" class="class_card" id="class_card">
+    <select name="class_card" class="class_card">
         <option hidden>{{default_class_card}}</option>
 
-        <optgroup label="Одноцветные" id="single_color"></optgroup>
+        {% for x in class_card %}
 
-
-        {% for x in lst_class_cards %}
-
-        <option id="{{x}}">{{x}}</option>
+        <option>{{x}}</option>
 
 
         {% endfor %}

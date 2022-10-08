@@ -15,6 +15,10 @@ UPLOAD_FOLDER = os.path.join("img", "cards")
 @create_cards_bp.route("/", methods=["GET", "POST"])
 @create_cards_bp.route("/create_cards", methods=["GET", "POST"])
 def create_cards():
+    lst_class_cards = ["Strength", "Intelligence", "Willpower", "Agility", "Endurance", "Netural" , "Archer",
+                       "Assassin", "Battlemage", "Crusader", "Mage", "Monk", "Scout", "Sorcerer", "Spellsword",
+                       "Warrior"]
+
     type_card = ["Creature", "Action", "Item", "Support"]
 
     type_creature = ["People", "Orcs", "Elves", "Undead", "Demons", "Water races", "Animals"]
@@ -101,6 +105,7 @@ def create_cards():
 
     return render_template("create_cards.html", default_title_card=default_title_card,
                            default_description_card=default_description_card, default_class_card=default_class_card,
+                           lst_class_cards=lst_class_cards,
                            type_card=type_card,
                            type_creature=type_creature, rare_card=rare_card,
                            attack_card=attack_card, mana_card=mana_card, life_card=life_card, keyword_card=keyword_card,
@@ -119,7 +124,7 @@ def update_cards(cards_id):
 
     mechanics_card = ["Pilfer", "Last Gaps", "Summon"]
 
-    return render_template("create_cards.html", default_title_card=query.title_card,
+    return render_template("update_cards.html", default_title_card=query.title_card,
                            default_description_card=query.description_card, default_class_card=query.class_card,
                            default_type_card=query.type_card,
                            default_rare_card=query.rare_card, default_mana_card=query.mana_card,

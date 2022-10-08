@@ -1,27 +1,18 @@
-let class_card = document.querySelector(".class_card")
+function change_dom() {
 
-
-let arr1 = ["Strength", "Intelligence", "Willpower", "Agility", "Endurance", "Netural"]
-
-let arr2 = ["Archer", "Assassin", "Battlemage", "Crusader", "Mage", "Monk", "Scout", "Sorcerer", "Spellsword", "Warrior"]
-
-
-function create_optgroup(arr, label) {
+    let class_card = document.querySelector(".class_card")
 
     let optgroup_label = document.createElement("optgroup")
-    optgroup_label.setAttribute("label", label)
-    class_card.add(optgroup_label);
-    for (x of arr) {
-        let option = document.createElement("option");
-        option.text = x;
-        class_card.add(option);
 
-    }
+    optgroup_label.setAttribute("label", "Мультиатрибут")
+
+    class_card.insertBefore(optgroup_label, document.querySelector("#Archer"))
+
 
 }
 
-create_optgroup(arr1, "Одноцветные")
-create_optgroup(arr2, "Мультиатрибут")
+
+change_dom()
 
 function disabled_menu(call = true) {
 
@@ -99,16 +90,16 @@ image_input.addEventListener("change", function () {
 
 update()
 
-function save_selected_value(type_creature,keyword_card,mechanics_card) {
+function save_selected_value(type_creature, keyword_card, mechanics_card) {
 
-    selected_value(type_creature,"#type_creature")
-    selected_value(keyword_card,"#keyword_card")
-    selected_value(mechanics_card,"#mechanics_card")
+    selected_value(type_creature, "#type_creature")
+    selected_value(keyword_card, "#keyword_card")
+    selected_value(mechanics_card, "#mechanics_card")
 
 
 }
 
-function selected_value(data,locator){
+function selected_value(data, locator) {
 
     options = Array.from(document.querySelector(locator));
 
