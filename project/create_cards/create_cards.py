@@ -120,8 +120,6 @@ def create_cards():
 def update_cards(cards_id):
     query = Cards.query.filter_by(id=cards_id).first()
 
-    print(query.img)
-
     if request.method == "POST":
 
         try:

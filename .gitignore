@@ -4,4 +4,5 @@ venv/
 *.jpeg
 *.png
 *.webp
+*.file
 __pycache__/
