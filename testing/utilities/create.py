@@ -18,10 +18,7 @@ def create(class_card="Strength", type_card="Creature", type_creature="People", 
 
     abs_file_path = join(script_dir, rel_path)
 
-    with open(abs_file_path, "rb") as f:
-        file = f.read()
-
-    files = {"file": file}
+    files = {"file": open(abs_file_path, "rb")}
 
     payload = {
 

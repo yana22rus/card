@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<table>
+    <tr>
+        <td>«</td>
+        {% for x in lst %}
+        <td><a href="/cards/{{x}}">{{x}}</a></td>
+        {% endfor %}
+        <td>»</td>
+    </tr>
+</table>
 </body>
 </html>

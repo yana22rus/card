@@ -17,8 +17,10 @@ db = SQLAlchemy(app)
 
 
 from project.create_cards.create_cards import create_cards_bp
+from project.page_filter.page_filter import page_filter_bp
 
 
 app.register_blueprint(create_cards_bp)
+app.register_blueprint(page_filter_bp)
 
 app.run(debug=True)
