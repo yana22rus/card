@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page_filter/style.css') }}">
 </head>
 <body>
+{% for x in img %}
+<div class="image">
+    <h2>qqq</h2>
+<img src="/static/img/cards/{{x}}" alt="" width="150px" height="150px">
+</div>
+{% endfor %}
+
 <table>
     <tr>
         <td>«</td>

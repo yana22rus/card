@@ -1,0 +1,13 @@
+.image {
+
+    position	: relative;
+
+}
+
+h2 {
+    position: absolute;
+    color: white;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+}
