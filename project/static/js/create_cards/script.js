@@ -1,19 +1,3 @@
-function change_dom() {
-
-    let class_card = document.querySelector(".class_card")
-
-    let optgroup_label = document.createElement("optgroup")
-
-    optgroup_label.setAttribute("label", "Мультиатрибут")
-
-    class_card.insertBefore(optgroup_label, document.querySelector("#Archer"))
-
-
-}
-
-
-change_dom()
-
 function disabled_menu(call = true) {
 
     let attack_card = document.querySelector("#attack_card")

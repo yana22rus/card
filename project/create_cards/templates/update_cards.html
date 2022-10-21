@@ -28,6 +28,9 @@
         {% for x in lst_class_cards %}
 
         <option id="{{x}}">{{x}}</option>
+        {% if x == 'Netural' %}
+        <optgroup label="Мультиатрибут"></optgroup>
+        {% endif %}
 
 
         {% endfor %}
